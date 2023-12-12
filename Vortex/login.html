@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vortex | login</title>
+
+    <link rel="stylesheet" href="reset.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="script.js" defer></script>
+
+    <link rel="shortcut icon" type="imagex/png" href="Midias/icon.png">
+
+    <style>
+        /*CSS DOS ELEMENTOS DA PAGINA DE LOGIN*/
+        .login-container {
+            background-color: white;
+            width: 700px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            display: flex;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .login-content {
+        display: flex;
+        align-items: center;
+        }
+
+        .imglogin {
+        width: 300px; 
+        height: auto;
+        margin-right: 20px;
+        }
+
+        .form-container {
+        width: 300px;
+        }
+
+        form {
+        display: none;
+        }
+
+        form.active {
+        display: block;
+        }
+
+        h2 {
+        color: #333; 
+        }
+
+        label {
+        display: block;
+        margin-bottom: 8px;
+        }
+
+        input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 16px;
+        box-sizing: border-box;
+        }
+
+        button {
+        background-color: #E8742C;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        }
+
+        button:hover {
+        background-color: #ffa500; 
+        }
+
+        .register-link {
+        margin-top: 10px;
+        }
+
+        .register-link a {
+        color: #0066cc; 
+        text-decoration: none;
+        }
+
+        .register-link a:hover {
+        text-decoration: underline;
+        }
+        /*CSS DOS ELEMENTOS DA PAGINA DE LOGIN*/
+
+    </style>
+
+
+</head>
+<body>
+
+    <main>
+        <!--Cabeçalho-->
+        <div class="bcabecalho">
+            <div id="menu">
+                <img class="menu" src="Midias/bMenu.png" alt="">
+                <a href="index.html">
+                    <img class="logomarca" src="Midias/Logo--Vortex.png" alt=""  >
+                </a>
+            </div>
+        </div>
+        
+        
+        
+         <!--DIV--Geral--do--Login-->
+        <div class="login-container">
+
+            <!--Imagem--Lateral-->
+            <img src="Midias/ft_login.jpg" alt="Logo" class="imglogin">
+
+
+
+            <!--DIV--Forms-->
+            <div class="form-container">
+
+
+
+                <!--FormsLogin-->
+                <form id="login-form" class="active" onsubmit="login(event)">
+
+                    <h2>Login</h2>
+
+                    <label for="username">Nome de Usuário:</label>
+                    <input type="text" id="username" name="username" required>
+
+                    <label for="password">Senha:</label>
+                    <input type="password" id="password" name="password" required>
+
+                    <p id="login-error" class="error-message"></p>
+
+                    <button type="submit">Entrar</button>
+
+                    <p class="register-link">Não tem uma conta? <a href="#" onclick="toggleForm()">Registrar-se</a></p>
+
+                </form>
+
+
+
+                <!--FormsRegistro-->
+                <form id="register-form" onsubmit="register(event)">
+
+                    <h2>Registro</h2>
+
+                    <label for="new-username">Nome de Usuário:</label>
+
+                    <input type="text" id="new-username" name="new-username" required>
+
+                    <label for="new-email">E-mail:</label>
+                    <input type="email" id="new-email" name="new-email" required>
+
+                    <label for="new-password">Senha:</label>
+                    <input type="password" id="new-password" name="new-password" required>
+
+                    <button type="submit">Registrar</button>
+
+                    <p class="register-link">Já tem uma conta? <a href="#" onclick="toggleForm()">Entrar</a></p>
+
+                </form>
+
+            </div>
+            
+        </div>
+
+        <!-- Add this element to your HTML -->
+            <div id="registration-success-modal" class="modal">
+                <div class="modal-content">
+                <p>Registro concluído com sucesso!</p>
+                <button id="enterButton">Entrar</button>
+                </div>
+                </div>
+  
+  
+    </main>
+  
+    <!--Rodapé-->
+    
+    <footer>
+        <div class="titulo_footer">
+
+            <h4>Nosso objetivo</h2>
+
+            <ul class="lista_footer">
+
+                <li class="item_lista_footer">
+                Proporcionar uma experiência única para os entusiastas da cultura geek, oferecendo produtos de alta qualidade e sendo um hub cultural.
+                </li>
+
+            </ul>
+
+        </div>
+
+        <div class="titulo_footer">
+
+            <h4>Contate-nos</h2
+                >
+            <ul class="lista_footer">
+
+                <li class="item_lista_footer">
+                 Entre em contato com nós atraves das nossas midias sociais:
+                </li>
+
+                <li class="item_lista_footer">
+                    Intagram <br>
+                    Whatsapp <br>
+                    Twitter <br>
+                </li>
+
+            </ul>
+
+        </div>
+
+        <div class="titulo_footer">
+
+            <h4>Sobre-nós</h2>
+
+            <ul class="lista_footer">
+
+                <li class="item_lista_footer">
+                Celebramos o universo geek na Vortex, oferecendo produtos de alta qualidade e promovendo eventos para a comunidade. Valores de paixão, diversidade e inovação nos destacam. Seja parte da experiência geek na Vortex - seu destino autêntico e sustentável para o melhor do mundo geek!
+                </li>
+
+            </ul>
+
+        </div>
+        
+    </footer>
+
+    <!--Fim--Rodapé-->
+    
+</body>
+</html>
